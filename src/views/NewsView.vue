@@ -1,26 +1,21 @@
 <template>
   <div>
-      <div v-for="user in users" :key="user.id">{{ user }}</div>
+      <div v-for="user in this.$store.state.news" :key="user.id">
+          {{ user.title }}
+      </div>
 
   </div>
 </template>
 
 <script>
-import { fetchNewsList} from '../api/index.js';
-//import axios from 'axios';
+
 
 export default {
 
-data(){
-    return {
-        users: []
-    }
-},
 created(){
-    fetchNewsList()
-    //axios.get('https://api.hnpwa.com/v0/news/1.json')
-    .then(response => this.users = response.data)
-    .catch()
+
+    this.$store.dispatch('FETCH_NEWS');
+
 }
 
 }
