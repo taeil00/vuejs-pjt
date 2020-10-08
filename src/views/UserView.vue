@@ -1,13 +1,13 @@
 <template>
 <div>
   <p>
-     {{ userInfo.id }}
+    name : {{ userInfo.id }}
   </p>
   <p>
-     {{ userInfo.karma }}
+    karma : {{ userInfo.karma }}
   </p>
   <p>
-     {{  this.$store.state.user.created }}
+    created : {{  this.$store.state.user.created }}
   </p>
   </div>
 </template>
