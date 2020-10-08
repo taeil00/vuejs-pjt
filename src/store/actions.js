@@ -2,8 +2,6 @@ import { fetchNewsList, fetchAskList, fetchJobsList} from '../api/index.js';
 
 export default{
 
-    
-
     FETCH_NEWS(context){
         fetchNewsList()
         .then(response => {

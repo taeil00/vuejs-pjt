@@ -1,8 +1,11 @@
 <template>
   <div>
-      <div v-for="user in this.$store.state.jobs" :key="user.id">
-          {{ user }}
-      </div>
+      <p v-for="job in this.$store.state.jobs" :key="job.id">
+         <a v-bind:href="job.url">{{ job.title }} </a>
+        <small>
+           {{ job.time_ago }}, {{ job.domain }}    
+        </small>    
+      </p>
   </div>
 </template>
 
